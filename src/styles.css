@@ -19,3 +19,4 @@
 .button:active{transform:scale(.97)}
 
 [data-theme=light] body :focus-visible{outline-color:var(--primary)}
+.about-intro>span{display:block}

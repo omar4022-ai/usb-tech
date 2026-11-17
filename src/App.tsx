@@ -8,7 +8,7 @@ import Solutions from './components/Solutions';
 import HeroHeadline from './components/HeroHeadline';
 
 function saved(key:string,fallback:string) { try { return localStorage.getItem(key) || fallback; } catch { return fallback; } }
-const navIds = ['home','services','about','process','contact'] as const;
+const navIds = ['home','about','services','process','contact'] as const;
 function App() {
   const [lang,setLang] = useState<Language>(()=>saved('usb-language','ar')==='en'?'en':'ar');
   const [theme,setTheme] = useState<'dark'|'light'>(()=>saved('usb-theme','dark')==='light'?'light':'dark');
@@ -82,11 +82,11 @@ function App() {
         </div>
         <div className="container hero-base" aria-hidden="true"><span>USB TECH</span><span className="hero-base-line"/><span>{t.heroBase}</span></div>
       </section>
-      <Solutions lang={lang} onSelectService={startProject}/>
       <section id="about" className="section about-section reveal"><div className="container about-layout">
-        <div className="about-copy"><p className="section-kicker"><span>02</span>{t.about}</p><h2>{t.aboutTitle}</h2><p>{t.aboutDescription1}</p><ul className="values">{t.values.map(value=><li key={value}><Icon name="check"/>{value}</li>)}</ul></div>
+        <div className="about-copy"><p className="section-kicker"><span>01</span>{t.about}</p><h2>{t.aboutTitle}</h2><p className="about-intro"><span>{t.aboutDescription1}</span><span>{t.aboutDescription2}</span></p><ul className="values">{t.values.map(value=><li key={value}><Icon name="check"/>{value}</li>)}</ul></div>
         <div className="about-visual"><div className="connection-symbol" aria-hidden="true"><span/><span/><span/><div>USB<br/><b>TECH</b></div></div><h3>{t.oneCompany}<br/><span className="gradient-text">{t.connectedSolutions}</span></h3></div>
       </div></section>
+      <Solutions lang={lang} onSelectService={startProject}/>
       <section id="process" className="section process-section reveal"><div className="container"><div className="section-heading"><p className="section-kicker"><span>03</span>{t.process}</p><h2>{t.processTitle}</h2></div><ol className="process-grid">{workflow[lang].map((step,index)=><li key={index}><span className="step-number">0{index+1}</span><h3>{step.title}</h3><p>{step.description}</p></li>)}</ol></div></section>
       <section id="contact" className="section contact-section reveal"><div className="container contact-layout"><div className="contact-copy"><p className="section-kicker"><span>04</span>{t.contact}</p><h2>{t.contactTitle}</h2><p>{t.contactDescription}</p><div className="contact-orbit" aria-hidden="true"><span>{lang === 'ar' ? '←' : '→'}</span></div><div className="contact-channels">{contactLinks}</div>{facebookUrl&&<a className="button button-secondary facebook-link" data-facebook-link href={facebookUrl} target="_blank" rel="noopener noreferrer"><Icon name="facebook"/>{t.facebook}<span aria-hidden="true">↗</span><span className="sr-only"> — {t.newTab}</span></a>}</div><ContactForm lang={lang} selectedService={selectedService} onServiceChange={setSelectedService}/></div></section>
     </main>

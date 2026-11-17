@@ -190,7 +190,7 @@ export default function Solutions({ lang, onSelectService }: SolutionsProps) {
     <span id="solutions" className="solutions-legacy-anchor" aria-hidden="true" />
     <span id="needs" className="solutions-legacy-anchor" aria-hidden="true" />
     <div className="container">
-      <div className="solutions-heading section-heading"><p className="section-kicker"><span>01</span>{t.eyebrow}</p><h2 id="services-title">{t.title}</h2><p>{t.description}</p><p className="solutions-sample-note">{t.sampleNote}</p></div>
+      <div className="solutions-heading section-heading"><p className="section-kicker"><span>02</span>{t.eyebrow}</p><h2 id="services-title">{t.title}</h2><p>{t.description}</p><p className="solutions-sample-note">{t.sampleNote}</p></div>
       <nav className="solutions-quick-links" aria-label={t.quickLinks}>
         {services[lang].map(service => <a href={`#solution-${service.id}`} key={service.id}>{quickNames[lang][service.id]}</a>)}
       </nav>
