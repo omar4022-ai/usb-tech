@@ -1,0 +1,28 @@
+export const ui = {
+  ar: {
+    descriptor: 'للحلول الرقمية والبرمجية', home: 'الرئيسية', services: 'خدماتنا ونماذجها', about: 'من نحن', process: 'كيف نعمل', contact: 'تواصل معنا',
+    browseDemos: 'جرّب النماذج', light: 'نهاري', dark: 'ليلي', menu: 'فتح القائمة', closeMenu: 'إغلاق القائمة', nav: 'التنقل الرئيسي', skip: 'انتقل إلى المحتوى',
+    hero1: 'نصمّم حضورك الرقمي،', hero2: 'ونطوّر أعمالك.',
+    heroDescription: 'مواقع ومتاجر ومنظومات تُصمّم حسب نشاطك. شاهد ما نقدّمه وجرّبه بنفسك.',
+    explore: 'اختر خدمتك وجرّب النموذج', heroNote: '٦ نماذج تفاعلية · بدون تسجيل', heroBase: 'نصمّم. نطوّر. نتكامل.',
+    aboutTitle: 'نحن USB TECH.',
+    aboutDescription1: 'فريق يجمع التصميم والبرمجة. نفهم طريقة عملك، ثم نبني لك حلًا يناسب احتياجك وهوية مشروعك.',
+    values: ['هوية واضحة.', 'حل حسب احتياجك.', 'اهتمام بالتفاصيل.'], oneCompany: 'شركة واحدة.', connectedSolutions: 'حلول تتكامل.',
+    processTitle: 'خطوات واضحة من البداية.', contactTitle: 'لديك فكرة؟ لنرتّبها معًا.', contactDescription: 'احكِ لنا ما الذي تريد تطويره في أعمالك. يكفي ملخّص بسيط لنبدأ من نقطة واضحة.',
+    facebook: 'تابعنا على فيسبوك', newTab: 'يفتح في تبويب جديد', email: 'البريد الإلكتروني', phone: 'الهاتف', whatsapp: 'تواصل عبر واتساب',
+    footerDescription: 'تصميم وبرمجة وحلول ذكية تخدم مشروعك.', rights: 'جميع الحقوق محفوظة.', backTop: 'العودة للأعلى', logoAlt: 'شعار USB TECH للحلول الرقمية والبرمجية',
+  },
+  en: {
+    descriptor: 'Digital & Software Solutions', home: 'Home', services: 'Services & demos', about: 'About us', process: 'Our process', contact: 'Contact us',
+    browseDemos: 'Try the demos', light: 'Light', dark: 'Dark', menu: 'Open menu', closeMenu: 'Close menu', nav: 'Main navigation', skip: 'Skip to content',
+    hero1: 'We design your presence.', hero2: 'And develop your business.',
+    heroDescription: 'Websites, stores, and systems built around your business. See what we offer and try it yourself.',
+    explore: 'Choose a service and try it', heroNote: '6 interactive demos · No sign-up', heroBase: 'DESIGN. DEVELOP. CONNECT.',
+    aboutTitle: 'We are USB TECH.',
+    aboutDescription1: 'A team bringing design and development together. We learn how you work, then build a solution around your needs and your brand.',
+    values: ['A clear identity.', 'Built around your needs.', 'Attention to detail.'], oneCompany: 'One company.', connectedSolutions: 'Connected solutions.',
+    processTitle: 'Clear steps from the start.', contactTitle: 'Have an idea? Let’s shape it together.', contactDescription: 'Tell us what you would like to improve in your business. A short overview is all we need to find a clear starting point.',
+    facebook: 'Follow us on Facebook', newTab: 'Opens in a new tab', email: 'Email', phone: 'Phone', whatsapp: 'Chat on WhatsApp',
+    footerDescription: 'Design, development, and smart solutions for your business.', rights: 'All rights reserved.', backTop: 'Back to top', logoAlt: 'USB TECH Digital & Software Solutions logo',
+  },
+};

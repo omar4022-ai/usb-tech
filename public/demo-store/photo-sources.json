@@ -1,0 +1,67 @@
+{
+  "downloadedOn": "2026-11-16",
+  "provider": "Unsplash",
+  "usage": "Photographic product imagery for the illustrative USB SELECT store. Product names and prices in the demo are illustrative.",
+  "photos": [
+    {
+      "file": "headphones.jpg",
+      "subject": "Black over-ear headphones on a yellow background",
+      "source": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?fm=jpg&fit=crop&w=900&q=85"
+    },
+    {
+      "file": "keyboard.jpg",
+      "subject": "White and silver compact keyboard",
+      "source": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?fm=jpg&fit=crop&w=900&q=85"
+    },
+    {
+      "file": "mouse.jpg",
+      "subject": "Charcoal computer mouse",
+      "source": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?fm=jpg&fit=crop&w=900&q=85"
+    },
+    {
+      "file": "speaker.jpg",
+      "subject": "Black cylindrical JBL speaker",
+      "source": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?fm=jpg&fit=crop&w=900&q=85"
+    },
+    {
+      "file": "watch.jpg",
+      "subject": "White and silver round-display watch",
+      "source": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&fit=crop&w=900&q=85"
+    },
+    {
+      "file": "camera.jpg",
+      "subject": "Black camera and interchangeable lenses",
+      "source": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?fm=jpg&fit=crop&w=900&q=85"
+    },
+    {
+      "file": "iphone-18-pro-max-black.jpg",
+      "subject": "Official Apple iPhone 18 Pro Max, black, front and back",
+      "page": "https://www.apple.com/shop/buy-iphone/iphone-18-pro/6.9-inch-display-256gb-black-unlocked",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-202609-6-9inch-black?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1786041806689"
+    },
+    {
+      "file": "iphone-18-pro-max-silver.jpg",
+      "subject": "Official Apple iPhone 18 Pro Max, silver, front and back",
+      "page": "https://www.apple.com/shop/buy-iphone/iphone-18-pro/6.9-inch-display-256gb-silver-unlocked",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-202609-6-9inch-silver?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1786041806977"
+    },
+    {
+      "file": "iphone-18-pro-max-glacier.jpg",
+      "subject": "Official Apple iPhone 18 Pro Max, glacier, front and back",
+      "page": "https://www.apple.com/shop/buy-iphone/iphone-18-pro/6.9-inch-display-256gb-glacier-unlocked",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-202609-6-9inch-glacier?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1786041807205"
+    },
+    {
+      "file": "iphone-18-pro-max-burgundy.jpg",
+      "subject": "Official Apple iPhone 18 Pro Max, burgundy, front and back",
+      "page": "https://www.apple.com/shop/buy-iphone/iphone-18-pro/6.9-inch-display-256gb-burgundy-unlocked",
+      "source": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-202609-6-9inch-burgundy?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1786041807169"
+    }
+  ],
+  "providers": [
+    "Unsplash",
+    "Apple"
+  ],
+  "verifiedOn": "2026-11-17",
+  "productReference": "https://www.apple.com/iphone-18-pro/specs/"
+}
