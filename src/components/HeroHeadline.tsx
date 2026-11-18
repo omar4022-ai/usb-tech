@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Language } from '../content';
 import './hero-headline.css';
 
-export default function HeroHeadline({ first, second, lang }: { first: string; second: string; lang: Language }) {
+export default function HeroHeadline({ label, first, second, lang }: { label: string; first: string; second: string; lang: Language }) {
   const heading = useRef<HTMLHeadingElement>(null);
   const [visible, setVisible] = useState(0);
   const lines = useMemo(() => {
@@ -64,7 +64,8 @@ export default function HeroHeadline({ first, second, lang }: { first: string; s
     };
   }, [lines, total]);
 
-  return <h1 ref={heading} className={`hero-headline${complete ? ' is-typed' : ''}`} aria-label={`${first} ${second}`}>
+  return <h1 ref={heading} className={`hero-headline${complete ? ' is-typed' : ''}`} aria-label={`${label}. ${first} ${second}`}>
+    <span className="hero-headline-label" aria-hidden="true">{label}</span>
     {lines.map((characters, index) => {
       const count = index === 0 ? Math.min(visible, characters.length) : Math.max(0, visible - lines[0].length);
       const active = index === (visible <= lines[0].length ? 0 : 1);

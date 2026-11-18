@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { workflow, type Language, type ServiceId } from './content';
 import { ui } from './ui';
+import { seoCopy } from './seo';
 import { siteConfig, getFacebookUrl, getWhatsAppUrl } from './config/site';
 import Icon from './components/Icon';
 import ContactForm from './components/ContactForm';
@@ -16,14 +17,28 @@ function App() {
   const [selectedService,setSelectedService] = useState<ServiceId>('company');
   const menuButton = useRef<HTMLButtonElement>(null);
   const t = ui[lang];
+  const seo = seoCopy[lang];
   const facebookUrl = getFacebookUrl(siteConfig.facebookUrl);
   const whatsappUrl = getWhatsAppUrl(siteConfig.whatsappNumber);
   useEffect(()=>{
     document.documentElement.lang=lang;
     document.documentElement.dir=lang==='ar'?'rtl':'ltr';
-    document.title=`USB TECH — ${t.descriptor}`;
+    document.title=seo.title;
+    const metadata = [
+      ['meta[name="description"]', seo.description],
+      ['meta[property="og:title"]', seo.title],
+      ['meta[property="og:description"]', seo.description],
+      ['meta[property="og:locale"]', seo.locale],
+      ['meta[property="og:image:alt"]', t.logoAlt],
+      ['meta[name="twitter:title"]', seo.title],
+      ['meta[name="twitter:description"]', seo.description],
+      ['meta[name="twitter:image:alt"]', t.logoAlt],
+    ];
+    metadata.forEach(([selector, content]) => {
+      document.querySelector(selector)?.setAttribute('content', content);
+    });
     try { localStorage.setItem('usb-language',lang); } catch { /* optional storage */ }
-  },[lang,t.descriptor]);
+  },[lang,seo,t.logoAlt]);
   useEffect(()=>{
     document.documentElement.dataset.theme=theme;
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content',theme==='dark'?'#030D1E':'#FFFFFF');
@@ -46,7 +61,7 @@ function App() {
     if(id) setSelectedService(id);
     setMenuOpen(false);
     document.getElementById('contact')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
-    document.querySelector<HTMLInputElement>('#project-form input')?.focus({preventScroll:true});
+    document.querySelector<HTMLInputElement>('#contact-name')?.focus({preventScroll:true});
   }
   const contactLinks = <>
     {siteConfig.contactEmail.trim() && <a href={`mailto:${siteConfig.contactEmail}`}><Icon name="mail"/><span dir="ltr">{siteConfig.contactEmail}</span></a>}
@@ -74,7 +89,7 @@ function App() {
         <div className="container hero-inner">
           <div className="hero-logo">{siteConfig.logoUrl?<img src={siteConfig.logoUrl} alt={t.logoAlt} width="1254" height="1254" fetchPriority="high"/>:<span className="fallback-logo" dir="ltr">USB TECH</span>}</div>
           <div className="hero-copy" dir={lang==='ar'?'rtl':'ltr'}>
-            <HeroHeadline key={lang} first={t.hero1} second={t.hero2} lang={lang}/>
+            <HeroHeadline key={lang} label={seo.headingLabel} first={t.hero1} second={t.hero2} lang={lang}/>
             <p>{t.heroDescription}</p>
             <div className="hero-buttons"><a className="button button-primary" href="#services">{t.explore}<Icon name="arrow" className="directional"/></a></div>
             <div className="hero-note">{t.heroNote}</div>

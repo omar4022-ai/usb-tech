@@ -55,8 +55,8 @@ const copy = {
     errorSummary: 'راجع الحقول الموضّحة أدناه لإكمال الطلب.',
     previewTitle: 'معاينة طلبك',
     previewNotice: 'لم يُرسل هذا الطلب. هذا ملخص محلي للمراجعة فقط.',
-    successTitle: 'تم استلام طلبك.',
-    successMessage: 'وصل طلب المشروع بنجاح. شكرًا لمشاركتنا فكرتك.',
+    successTitle: 'تم إرسال طلبك.',
+    successMessage: 'شكرًا لمشاركتنا فكرتك مع فريق USB TECH.',
     errorTitle: 'لم نتمكن من تأكيد إرسال الطلب.',
     errorMessage: 'احتفظنا ببياناتك هنا. تحقق من اتصالك وحاول مرة أخرى.',
     notProvided: 'غير مذكور',
@@ -100,8 +100,8 @@ const copy = {
     errorSummary: 'Review the highlighted fields below to complete your request.',
     previewTitle: 'Your request preview',
     previewNotice: 'This request has not been sent. This is a local summary for you to review.',
-    successTitle: 'Your request has been received.',
-    successMessage: 'Your project request was delivered successfully. Thank you for sharing your idea.',
+    successTitle: 'Your request was submitted.',
+    successMessage: 'Thank you for sharing your project with USB TECH.',
     errorTitle: 'We could not confirm delivery.',
     errorMessage: 'Your details are still here. Check your connection and try again.',
     notProvided: 'Not provided',
@@ -131,6 +131,7 @@ function submissionEndpoint(value: string, pageOrigin: string): string | null {
 
 export default function ContactForm({ lang, selectedService, onServiceChange }: ContactFormProps) {
   const [fields, setFields] = useState<Fields>({ name: '', business: '', contact: '', brief: '' });
+  const [website, setWebsite] = useState('');
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<Status>('idle');
   const [summary, setSummary] = useState<RequestSummary | null>(null);
@@ -223,7 +224,7 @@ export default function ContactForm({ lang, selectedService, onServiceChange }: 
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...request, language: lang }),
+        body: JSON.stringify({ ...request, language: lang, website }),
         signal: controller.signal,
         redirect: 'error',
         referrerPolicy: 'no-referrer',
@@ -248,6 +249,10 @@ export default function ContactForm({ lang, selectedService, onServiceChange }: 
     <div className="contact-form-card">
       {previewMode && <div className="form-preview-intro"><span className="form-mode-badge"><span aria-hidden="true">◉</span>{whatsappBaseUrl ? t.whatsappMode : t.previewMode}</span><p id="form-preview-help">{whatsappBaseUrl ? t.whatsappHelp : t.previewHelp}</p></div>}
       <form id="project-form" ref={formRef} onSubmit={submit} noValidate aria-busy={loading} aria-describedby={previewMode ? 'form-preview-help form-required-note' : 'form-required-note'}>
+        <div className="contact-honeypot" aria-hidden="true">
+          <label htmlFor="contact-website">Website</label>
+          <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" value={website} onChange={event => setWebsite(event.target.value)} maxLength={200} readOnly={loading} />
+        </div>
         <p className="form-required-note" id="form-required-note">{t.required}</p>
         {Object.values(errors).some(Boolean) && <p className="form-error-summary" role="alert">{t.errorSummary}</p>}
         <div className="contact-field-row">

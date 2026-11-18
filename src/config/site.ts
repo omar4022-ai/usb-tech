@@ -5,17 +5,17 @@
 export const siteConfig = {
   // رابط صفحة الشركة الكامل على Facebook. يُستخدم للزر وأيقونة التذييل معًا.
   facebookUrl: 'https://www.facebook.com/share/19WYVnYTSM/?mibextid=wwXIfr',
-  contactEmail: '',
+  contactEmail: 'info@usb-tech.ly',
   phone: '+218922221113',
   // رقم دولي، بأرقام فقط ومن دون + أو مسافات.
   whatsappNumber: '218922221113',
   // مسار الشعار الأصلي الشفاف داخل public، مثل ./usb-tech-logo.png.
   // عند عدم توفره، يظهر اسم الشركة بنص مؤقت، وليس شعارًا أصليًا مُعاد إنشاؤه.
   logoUrl: './usb-tech-logo.png',
-  // HTTPS endpoint يقبل POST JSON ويعيد { success: true } عند الاستلام الحقيقي.
+  // HTTPS endpoint يقبل POST JSON ويعيد { success: true } عند قبول خادم البريد للإرسال.
   // قيمة فارغة = تجهيز رسالة واتساب عند ضبط رقمه، أو معاينة محلية إن لم يُضبط.
   // يتطلب إرسال رسالة واتساب تأكيد الزائر داخل واتساب؛ الموقع لا يؤكد استلامها.
-  formEndpoint: '',
+  formEndpoint: 'https://forms.usb-tech.ly/contact.php',
 };
 
 /** Both Facebook locations share this validation and setting. */
